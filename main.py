@@ -1,11 +1,17 @@
+import sys
 import requests
 from bs4 import BeautifulSoup
+
+if len(sys.argv) != 2:
+    print("Usage: python main.py <search_query>")
+    sys.exit(1)
+
+search_query = sys.argv[1]
 
 product_names = []
 product_prices = []
 product_descriptions = []
 
-search_query = input("What mobile do you want to search? ")
 page_number = 1
 
 while True:
